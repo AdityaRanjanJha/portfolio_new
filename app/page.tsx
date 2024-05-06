@@ -1,14 +1,16 @@
-import Image from "next/image";
+import Header from "./header/page";
+import { motion } from "framer-motion";
+
 
 export default function Home() {
   return (
     <div>
-      <head>
+      <header>
         <title>My Portfolio</title>
-      </head>
+      </header>
 
-      {/* Header */}
-
+      <Header />
+      
       {/* Hero */}
 
       {/* About */}
@@ -22,4 +24,5 @@ export default function Home() {
       {/* Contact Me */}
     </div>
   );
+  
 }
