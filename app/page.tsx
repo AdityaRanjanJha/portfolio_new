@@ -1,4 +1,5 @@
 import About from "./About/About";
+import Experience from "./Experience/Experience";
 import Hero from "./Hero/page";
 import Header from "./header/page";
 import { motion } from "framer-motion";
@@ -21,7 +22,8 @@ export default function Home() {
       </section>
 
       {/* Experience */}
-      <section id="experience" className="">
+      <section id="experience" className="snap-center">
+        <Experience />
       </section>
 
       {/* Skills */}
