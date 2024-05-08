@@ -5,6 +5,7 @@ import BackgroundCircles from '../BackgroundCircles/BackgroundCircles'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import me from '../../public/me.jpg'
+import Link from 'next/link'
 
 export default function Client() {
     const [text , count] = useTypewriter({
@@ -28,18 +29,18 @@ export default function Client() {
                 <Cursor cursorColor='#33FF58'/>
             </h1>
             <div className='pt-5'>
-                {/* <Link href="#about"> */}
+                <Link href="#about">
                     <button className='ButtonHero'>About</button>
-                {/* </Link> */}
-                {/* <Link href="#experience"> */}
+                </Link>
+                <Link href="#experience">
                     <button className='ButtonHero'>Experience</button>
-                {/* </Link> */}
-                {/* <Link href="#skills"> */}
+                </Link>
+                <Link href="#skills">
                     <button className='ButtonHero'>Skills</button>
-                {/* </Link>
-                <Link href="#projects"> */}
+                </Link>
+                <Link href="#projects">
                     <button className='ButtonHero'>Projects</button>
-                {/* </Link> */}
+                </Link>
             </div>
         </div>
         
