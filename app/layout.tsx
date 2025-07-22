@@ -15,8 +15,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" style={{ scrollBehavior: 'smooth' }}>
+      <body className={inter.className}>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            if (typeof window !== 'undefined') {
+              window.history.scrollRestoration = 'manual';
+              window.scrollTo(0, 0);
+            }
+          `
+        }} />
+        {children}
+      </body>
     </html>
   );
 }

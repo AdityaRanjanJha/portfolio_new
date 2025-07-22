@@ -21,7 +21,7 @@ export default function Header({}: Props) {
         transition={{
             duration:1.5
         }}
-          className="flex flex-row item-center">
+          className="flex flex-row items-center">
             <SocialIcon url= "https://twitter.com/AdityaRanjanJh5" 
             fgColor="gray" 
             bgColor="transparent"/>
@@ -47,7 +47,7 @@ export default function Header({}: Props) {
         transition={{
             duration:1.5,
         }}
-        className="flex flex-row item-center text-gray-300 cursor-pointer">
+        className="flex flex-row items-center text-gray-300 cursor-pointer">
             <SocialIcon
                 className="cursor-pointer"
                 network="email"
