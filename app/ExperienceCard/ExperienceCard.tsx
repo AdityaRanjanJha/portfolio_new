@@ -6,7 +6,7 @@ type Props = {
   title: string,
   company: string,
   imageURL: string,
-  techIcon: string[],
+  techIcon: (string | React.ReactElement)[],
   description: string,
   summaryPoints: string[],
   dateRange: string
@@ -39,14 +39,19 @@ function ExperienceCard({
           <h4 className='text-4xl font-light'>{title}</h4>
           <p className='font-bold text-2xl mt-1'>{company}</p>
           <div className='flex space-x-2 my-2'>
-          {techIcon.map((techIcon,index)=>(
-            <img
-              key = {index} 
-              className='h-10 w-10 rounded-full'
-              src={techIcon}
-              alt='image not found!!'
-            />
-        ))}
+          {techIcon.map((tech, index) => (
+            <div key={index} className='h-10 w-10 flex items-center justify-center'>
+              {typeof tech === 'string' ? (
+                <img
+                  className='h-10 w-10 rounded-full'
+                  src={tech}
+                  alt='tech icon'
+                />
+              ) : (
+                tech
+              )}
+            </div>
+          ))}
 
             {/* <img 
               className='h-10 w-10 rounded-full'
@@ -64,8 +69,8 @@ function ExperienceCard({
             {description}
           </p>
           <ul className='list-disc space-y-4 ml-5 text-lg'>
-            {summaryPoints.map((index,points)=>(
-              <li key={index}>{points}</li>
+            {summaryPoints.map((point, index) => (
+              <li key={index}>{point}</li>
             ))}
           </ul>
         </div>

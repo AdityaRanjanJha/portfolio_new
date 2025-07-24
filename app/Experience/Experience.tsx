@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import ExperienceCard from '../ExperienceCard/ExperienceCard';
+import { SiReact, SiJavascript, SiNodedotjs, SiMongodb } from "react-icons/si";
 
 type Props = {}
 function Experience({ }: Props) {
@@ -36,7 +37,24 @@ function Experience({ }: Props) {
                         'Learned collaboration via issues and PR reviews',
                     ]} />
                 
-                {/* <ExperienceCard /> */}
+                <ExperienceCard 
+                    title='Software Development Intern'
+                    company='Tinisoft'
+                    techIcon={[
+                        <SiReact size={40} color="#61DAFB" />,
+                        <SiJavascript size={40} color="#F7DF1E" />,
+                        <SiNodedotjs size={40} color="#339933" />,
+                        <SiMongodb size={40} color="#47A248" />
+                    ]}
+                    imageURL='/tinisoft.jpeg'
+                    dateRange='January 2024 - March 2024'
+                    description='Worked as a Software Development Intern, focusing on full-stack web development using modern technologies.'
+                    summaryPoints={[
+                        'Built the Circuit Chrome extension at Tinisoft, utilizing Chrome APIs like tabCapture to enhance functionality.',
+                        'Developed the front-end interface based on designer specifications for a seamless user experience.',
+                        'Updated the extension to support the latest Chrome Sidebar API, ensuring compatibility with future browser updates.'
+                    ]}
+                />
             </div>
         </motion.div>
     )
