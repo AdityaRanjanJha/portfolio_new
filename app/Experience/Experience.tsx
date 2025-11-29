@@ -7,6 +7,15 @@ import { SiReact, SiJavascript, SiNodedotjs, SiMongodb } from "react-icons/si";
 
 type Props = {}
 function Experience({ }: Props) {
+    const scrollRef = React.useRef<HTMLDivElement>(null);
+
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollRef.current) {
+            const scrollAmount = direction === 'left' ? -400 : 400;
+            scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    };
+
     return (
         <motion.div
             initial={{
@@ -22,7 +31,28 @@ function Experience({ }: Props) {
             <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>
                 Experience
             </h3>
-            <div className='w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory mt-24'>
+
+            {/* Left Arrow */}
+            <button
+                onClick={() => scroll('left')}
+                className='absolute left-5 top-1/2 -translate-y-1/2 z-30 opacity-30 hover:opacity-100 transition-opacity'
+            >
+                <svg className='w-12 h-12 text-[#33FF58]' fill='currentColor' viewBox='0 0 20 20'>
+                    <path fillRule='evenodd' d='M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z' clipRule='evenodd' />
+                </svg>
+            </button>
+
+            {/* Right Arrow */}
+            <button
+                onClick={() => scroll('right')}
+                className='absolute right-5 top-1/2 -translate-y-1/2 z-30 opacity-30 hover:opacity-100 transition-opacity'
+            >
+                <svg className='w-12 h-12 text-[#33FF58]' fill='currentColor' viewBox='0 0 20 20'>
+                    <path fillRule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clipRule='evenodd' />
+                </svg>
+            </button>
+
+            <div ref={scrollRef} className='w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory mt-24'>
                 <ExperienceCard
                     title="Participated in HACKTOBER FEST"
                     company="Hacktober Fest 2023"
