@@ -5,6 +5,8 @@ import Header from "./header/page";
 import Skills from "./Skills/Skills";
 import { motion } from "framer-motion";
 import ScrollToTop from "./components/ScrollToTop";
+import Projects from "./Projects/Projects";
+import ContactMe from "./ContactMe/ContactMe";
 
 
 export default function Home() {
@@ -35,8 +37,14 @@ export default function Home() {
       </section>
 
       {/* Projects */}
+      <section id="projects">
+        <Projects/>
+      </section>
 
       {/* Contact Me */}
+      <section id="contact">
+          <ContactMe/>
+      </section>
     </div>
   );
 
